@@ -26,5 +26,6 @@ jobs:
           EMAIL_REMETENTE: ${{ secrets.EMAIL_REMETENTE }}
           EMAIL_SENHA: ${{ secrets.EMAIL_SENHA }}
           EMAIL_DESTINOS: ${{ secrets.EMAIL_DESTINOS }}
+          
         run: python script.py``
       
