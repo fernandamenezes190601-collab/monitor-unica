@@ -1,16 +1,17 @@
 name: Monitor UNICA
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 */6 * * *"
-  workflow_dispatch:
 
 jobs:
   monitor:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
 
       - name: Configurar Python
         uses: actions/setup-python@v5
@@ -26,4 +27,3 @@ jobs:
           EMAIL_SENHA: ${{ secrets.EMAIL_SENHA }}
           EMAIL_DESTINOS: ${{ secrets.EMAIL_DESTINOS }}
         run: python main.py
-``
